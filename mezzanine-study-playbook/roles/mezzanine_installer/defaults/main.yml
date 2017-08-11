@@ -1,3 +1,5 @@
+---
+
 user: "{{ ansible_ssh_user }}"
 proj_name: mezzanine-example
 venv_home: "{{ ansible_env.HOME }}"

@@ -1,3 +1,5 @@
+---
+
 - name: restart supervisor
   supervisorctl: name={{ gunicorn_procname }} state=restarted
   sudo: True
