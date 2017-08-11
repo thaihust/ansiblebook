@@ -1,0 +1,29 @@
+user: "{{ ansible_ssh_user }}"
+proj_name: mezzanine-example
+venv_home: "{{ ansible_env.HOME }}"
+venv_path: "{{ venv_home }}/{{ proj_name }}"
+proj_dirname: project
+proj_path: "{{ venv_path }}/{{ proj_dirname }}"
+reqs_path: requirements.txt
+manage: "{{ python }} {{ proj_path }}/manage.py"
+live_hostname: 127.0.0.1 
+domains:
+  - 127.0.0.1 
+#repo_url: git@github.com:lorin/mezzanine-example.git
+repo_url: https://github.com/lorin/mezzanine-example.git
+gunicorn_port: 8000
+locale: en_US.UTF-8
+# Variables below don't appear in Mezzanine's fabfile.py
+# but I've added them for convenience
+conf_path: /etc/nginx/conf
+tls_enabled: True
+python: "{{ venv_path }}/bin/python"
+database_name: "{{ proj_name }}"
+database_user: "{{ proj_name }}"
+database_host: localhost
+database_port: 5432
+gunicorn_proc_name: mezzanine
+db_pass: Apa_thetic_14o894 
+admin_pass: Apa_thetic_14o894 
+secret_key: b495a05c396843b6b47ac944a72c92ed
+nevercache_key: b5d87bb4e17c483093296fa321056bdc

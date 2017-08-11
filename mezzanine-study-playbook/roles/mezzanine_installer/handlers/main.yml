@@ -1,0 +1,7 @@
+- name: restart supervisor
+  supervisorctl: name={{ gunicorn_procname }} state=restarted
+  sudo: True
+
+- name: restart nginx
+  service: name=nginx state=restarted
+  sudo: True

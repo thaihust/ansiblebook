@@ -1,0 +1,7 @@
+- hosts: mezzanine
+
+  roles:
+  - mezzanine_installer
+
+  tags:
+  - mezzanine
