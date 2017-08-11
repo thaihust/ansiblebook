@@ -1,4 +1,4 @@
-### Useful commands
+### Useful notes
 
 - Create roles directory structure: `ansible-galaxy init -p roles mezzanine-installer`
 - Pre-tasks and Post-tasks:
@@ -34,6 +34,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Use the same key for each machine
   config.ssh.insert_key = false
+  config.ssh.forward_agent = true
   
   config.vm.define "vagrant1" do |vagrant1|
     vagrant1.vm.box = "ubuntu/trusty64"
