@@ -13,7 +13,7 @@
       apt: update_cache=yes
 
   roles:
-  - mezzanine_installer
+    - mezzanine_installer
 
   post_tasks:
     - name: notify Slack that the servers have been updated
@@ -24,5 +24,5 @@
         msg="web server {{ inventory_hostname }} configured"
 
   tags:
-  - mezzanine
+    - mezzanine
 ```
